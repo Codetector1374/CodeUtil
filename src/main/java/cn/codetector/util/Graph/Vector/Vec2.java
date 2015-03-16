@@ -35,12 +35,10 @@ public class Vec2 {
 	public String toString(){
 		return X + " , "+ Y;
 	}
-    public void Multiply(int number){
-        this.X*=number;
-        this.Y*=number;
+    public Vec2 Multiply(int number){
+        return new Vec2(this.X*number,this.Y*number);
     }
-    public void Add(Vec2 v){
-        this.X +=v.GetX();
-        this.Y +=v.GetY();
+    public Vec2 Add(Vec2 v){
+        return new Vec2(this.X +v.GetX(), this.Y +v.GetY());
     }
 }
