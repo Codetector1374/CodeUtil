@@ -14,7 +14,7 @@ public class HTTP {
     }
 
     public static String HttpContextFromURL(String url) throws IOException{
-        HTTP.HttpContextFromURL(new URL(url));
+        return HTTP.HttpContextFromURL(new URL(url));
     }
 
 }

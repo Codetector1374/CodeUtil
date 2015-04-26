@@ -32,6 +32,7 @@ public class Vec2 {
 	public void SetY(float y){
 		Y = y;
 	}
+	@Override
 	public String toString(){
 		return X + " , "+ Y;
 	}
