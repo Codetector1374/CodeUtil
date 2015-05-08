@@ -4,9 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
 
-/**
- * Created by Codetector on 15/4/11.
- */
+
 public class HTTP {
 
     public static String HttpContextFromURL(URL url) throws IOException {
