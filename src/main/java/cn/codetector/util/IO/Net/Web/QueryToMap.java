@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class QueryToMap {
     public static Map<String, String> queryToMap(String query){
-        Map<String, String> result = new HashMap<String, String>();
+        Map<String, String> result = new HashMap<>();
         for (String param : query.split("&")) {
             String pair[] = param.split("=");
             if (pair.length>1) {

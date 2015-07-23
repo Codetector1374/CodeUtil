@@ -1,34 +1,20 @@
 package cn.codetector.util.IO.Net.Web;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by Codetector on 15/5/5.
- */
 public class HTTPTest {
-
-    @Before
-    public void setUp() throws Exception {
-
-    }
-
-    @After
-    public void tearDown() throws Exception {
-
-    }
-
     @Test
     public void testHttpContextFromURL() throws Exception {
-        assertNotNull(HTTP.HttpContextFromURL("http://www.google.com"));
-        System.out.print(HTTP.HttpContextFromURL("http://www.google.com"));
+        assertNotNull(HTTP.HttpContextFromURL("http://www.baidu.com"));
     }
 
     @Test
-    public void testHttpContextFromURL1() throws Exception {
-        assertNotNull(HTTP.HttpContextFromURL("http://www.google.com"));
+    public void testSendPost() throws Exception {
+        HTTPResponse response = HTTP.HttpPost("http://tieba.baidu.com/mo", "", null);
+        System.out.println(response.getCookies().getValue());
+        System.out.println(response.getContent());
+        System.out.println(response.getHeaders());
     }
 }
