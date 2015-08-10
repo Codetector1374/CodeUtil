@@ -12,6 +12,5 @@ public class HttpClientTest extends TestCase {
     }
     @Test
     public void testPost() throws Exception {
-        new HttpClient().post("http://backup.cubecraft.cn/test.php","","utf-8");
     }
 }
