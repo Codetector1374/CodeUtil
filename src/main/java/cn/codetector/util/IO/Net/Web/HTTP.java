@@ -1,11 +1,8 @@
 package cn.codetector.util.IO.Net.Web;
 
-import cn.codetector.util.Encryption.SHA1;
-
 import java.io.*;
 import java.net.*;
 import java.nio.charset.Charset;
-import java.sql.Time;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
