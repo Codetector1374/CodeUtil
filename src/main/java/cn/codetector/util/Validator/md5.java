@@ -1,4 +1,4 @@
-package cn.codetector.util.Encryption;
+package cn.codetector.util.Validator;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
