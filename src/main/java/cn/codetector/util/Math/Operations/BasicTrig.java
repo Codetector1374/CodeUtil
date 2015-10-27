@@ -1,4 +1,4 @@
-package cn.codetector.util.MathUtil.Operations;
+package cn.codetector.util.Math.Operations;
 
 public class BasicTrig {
 	public static double Sine(double Value, boolean Radian){
