@@ -1,6 +1,6 @@
 package cn.codetector.util.Math.Number;
 
-public class RationalNumber extends Number{
+public class in extends Number{
 
     @Override
     public int intValue() {

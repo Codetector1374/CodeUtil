@@ -12,4 +12,8 @@ public abstract class Number {
     abstract public float floatValue();
     abstract public long longValue();
     abstract public String stringValue();
+    @Override
+    public String toString() {
+        return this.stringValue();
+    }
 }
