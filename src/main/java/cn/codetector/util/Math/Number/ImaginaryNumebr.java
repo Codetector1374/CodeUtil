@@ -1,6 +1,6 @@
 package cn.codetector.util.Math.Number;
 
-public class in extends Number{
+public class ImaginaryNumebr extends Number{
 
     @Override
     public int intValue() {

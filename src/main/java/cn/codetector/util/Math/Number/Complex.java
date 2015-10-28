@@ -2,14 +2,14 @@ package cn.codetector.util.Math.Number;
 
 public class Complex extends Number {
     private RealNumber realPart = null;
-    private in rationalPart = null;
+    private ImaginaryNumebr rationalPart = null;
     public Complex(double real){
 
     }
-    public Complex(double real, in in){
+    public Complex(double real, ImaginaryNumebr ImaginaryNumebr){
 
     }
-    public Complex(in in){
+    public Complex(ImaginaryNumebr ImaginaryNumebr){
 
     }
     public enum ComplexType{
