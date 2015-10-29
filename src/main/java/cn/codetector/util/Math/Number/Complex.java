@@ -2,20 +2,20 @@ package cn.codetector.util.Math.Number;
 
 public class Complex extends Number {
     private RealNumber realPart = null;
-    private IN imaginaryPart = null;
+    private ImaginaryNumber imaginaryPart = null;
     public Complex(double real){
         this.realPart = new RealNumber(real);
     }
-    public Complex(double real, IN IN){
+    public Complex(double real, ImaginaryNumber ImaginaryNumber){
         this.realPart = new RealNumber(real);
-        this.imaginaryPart = IN;
+        this.imaginaryPart = ImaginaryNumber;
     }
-    public Complex(IN IN){
-        this.imaginaryPart = IN;
+    public Complex(ImaginaryNumber ImaginaryNumber){
+        this.imaginaryPart = ImaginaryNumber;
     }
     public Complex(double real, double imaginary){
         this.realPart = new RealNumber(real);
-        this.imaginaryPart = new IN(imaginary);
+        this.imaginaryPart = new ImaginaryNumber(imaginary);
     }
     public enum ComplexType{
         RealOnly, ImaginaryOnly, BOTH, UnDefined

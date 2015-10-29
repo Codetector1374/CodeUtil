@@ -1,9 +1,9 @@
 package cn.codetector.util.Math.Number;
 
-public class IN extends Number{
+public class ImaginaryNumber extends Number{
     public double number;
 
-    public IN(double number) {
+    public ImaginaryNumber(double number) {
         this.number = number;
     }
 
