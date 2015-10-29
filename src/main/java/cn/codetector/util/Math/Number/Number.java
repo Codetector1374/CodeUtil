@@ -7,10 +7,10 @@ public abstract class Number {
             return "This number can not be formatted into the selected format";
         }
     }
-    abstract public int intValue();
-    abstract public double doubleValue();
-    abstract public float floatValue();
-    abstract public long longValue();
+    abstract public int intValue() throws NumberEvaluationException;
+    abstract public double doubleValue() throws NumberEvaluationException;
+    abstract public float floatValue() throws NumberEvaluationException;
+    abstract public long longValue() throws NumberEvaluationException;
     abstract public String stringValue();
     @Override
     public String toString() {
