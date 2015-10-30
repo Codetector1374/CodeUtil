@@ -6,5 +6,6 @@ public class QuadraticTest extends TestCase {
 
     public void testSolve() throws Exception {
         System.out.println(new Quadratic(1,-1,-1).solve());
+
     }
 }
