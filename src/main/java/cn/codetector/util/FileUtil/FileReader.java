@@ -7,6 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileReader {
+    /**
+     * Read a file to bunch of Strings. (line by line)
+     * @param file - File to read
+     * @return - The List of Strings(lines)
+     */
     public static List<String> readFileByLine(File file){
         List<String> string = new ArrayList<>();
 
