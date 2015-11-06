@@ -1,8 +1,6 @@
 package cn.codetector.util.Math.Polynomial;
 
-import cn.codetector.util.Math.Number.*;
 import cn.codetector.util.Math.Number.Number;
-import sun.java2d.pipe.SolidTextRenderer;
 
 public class QuadraticSolution {
     Quadratic.Type type;

@@ -8,13 +8,6 @@
     <artifactId>util</artifactId>
     <version>1.0.10</version>
 
-    <distributionManagement>
-        <repository>
-            <id>codeutil</id>
-            <url>http://cndx.walazuowen.cn:8081/nexus/content/repositories/codeutil</url>
-        </repository>
-    </distributionManagement>
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
