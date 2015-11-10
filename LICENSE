@@ -1,0 +1,4 @@
+anguage: java
+script: mvn compile test
+jdk:
+  - oraclejdk8
