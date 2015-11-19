@@ -12,7 +12,6 @@ public class AreaUnderCurve {
     }
 }
 class testFunction implements Function{
-
     @Override
     public double evaluate(double x) {
         return Math.pow(Math.E, Math.pow(x,2));
