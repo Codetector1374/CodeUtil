@@ -2,7 +2,7 @@ package cn.codetector.util.Math;
 
 public class AreaUnderCurve {
     public double AreaUnderTheCurve(int n, int m){
-        final double SECTION_SIZE = 0.00000001;
+        final double SECTION_SIZE = 0.000001;
         double sum = 0;
         Function testFunc = new testFunction();
         for (double i = n; i <= m; i+=SECTION_SIZE){
