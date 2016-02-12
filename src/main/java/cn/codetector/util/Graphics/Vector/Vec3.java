@@ -1,4 +1,4 @@
-package cn.codetector.util.Graph.Vector;
+package cn.codetector.util.Graphics.Vector;
 
 public class Vec3 {
 	private float X;

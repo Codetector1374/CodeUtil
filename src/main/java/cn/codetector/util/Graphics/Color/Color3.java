@@ -1,4 +1,4 @@
-package cn.codetector.util.Graph.Color;
+package cn.codetector.util.Graphics.Color;
 
 public class Color3 {
 	public float Red;

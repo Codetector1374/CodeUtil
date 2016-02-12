@@ -1,11 +1,7 @@
-package cn.codetector.util.Encryption;
+package cn.codetector.util.Validator;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import org.junit.internal.runners.statements.Fail;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Codetector on 15/8/22.

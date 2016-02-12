@@ -1,4 +1,4 @@
-package cn.codetector.util.MathUtil.Shape;
+package cn.codetector.util.Math.Shape;
 
 public class Circle {
 	private double Radius;

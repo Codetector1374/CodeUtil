@@ -4,7 +4,15 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Codetector
+ */
 public class FileListUtil {
+    /**
+     *
+     * @param dirname Directory Location in String
+     * @return Everything in that Directory
+     */
 	public static String[] ListDir (String dirname){
 		if(!dirname.endsWith(File.separator)){
 			dirname = dirname + File.separator;
@@ -22,7 +30,13 @@ public class FileListUtil {
 		String[] files = dirFile.list();
 		return files;
 	}
-	
+
+    /**
+     *
+     * @param dirname - Directory Location in String
+     * @param Suffix - Only list only files with this Extension.(dot is recommended, but not required)
+     * @return Everything in that Directory
+     */
 	public static String[] ListDir(String dirname, String Suffix){
 		String a[] = ListDir(dirname);
 		List<String>  returnVal= new ArrayList<String>();

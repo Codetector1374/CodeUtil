@@ -10,6 +10,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class ImageUtil {
+    /**
+     *
+     * @param image - Image to Encode
+     * @param type - Image Type in String (Usually the file extension without the '.'
+     * @return - The Encoded Image in String Format;
+     */
     public static String encodeToString(BufferedImage image, String type) {
         String imageString = null;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -28,6 +34,11 @@ public class ImageUtil {
         return imageString;
     }
 
+    /**
+     *
+     * @param imageString Encoded imageString
+     * @return Decoded image if is a valid String, Or <em>null</em> when is invalid.
+     */
     public static BufferedImage decodeToImage(String imageString) {
 
         BufferedImage image = null;
@@ -38,9 +49,7 @@ public class ImageUtil {
             ByteArrayInputStream bis = new ByteArrayInputStream(imageByte);
             image = ImageIO.read(bis);
             bis.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        } catch (Exception e) {return  null;}
         return image;
     }
 }
