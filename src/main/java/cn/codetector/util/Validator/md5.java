@@ -3,7 +3,7 @@ package cn.codetector.util.Validator;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class md5 {
+public class MD5 {
     private static final char[] HEX_DIGITS = { '0', '1', '2', '3', '4', '5',
             '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
     public static String getmd5String(String original){
