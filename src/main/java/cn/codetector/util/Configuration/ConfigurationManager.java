@@ -19,4 +19,8 @@ public class ConfigurationManager {
         configs.put(configName, new Configuration(new File("./config/" + configName)));
         return getConfiguration(configName);
     }
+
+    public static Configuration getConfiguration(File storeLocation) {
+        return new Configuration(storeLocation);
+    }
 }
