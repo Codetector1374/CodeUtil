@@ -17,7 +17,7 @@ public class Configuration {
     private Map<String, Object> configs;
     private File file;
 
-    public Configuration(File configFile) {
+    protected Configuration(File configFile) {
         file = configFile;
         if (!file.exists()) {
             file.mkdirs();
