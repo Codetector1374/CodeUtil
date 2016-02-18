@@ -3,7 +3,7 @@ package cn.codetector.util.Validator;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class MD56 {
+public class MD5 {
     private static final char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5',
             '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
@@ -11,7 +11,7 @@ public class MD56 {
         String rtnStr = "";
         MessageDigest messageDigest = null;
         try {
-            messageDigest = MessageDigest.getInstance("MD56");
+            messageDigest = MessageDigest.getInstance("MD5");
             messageDigest.update(original.getBytes());
             byte[] bytes = messageDigest.digest();
             int len = bytes.length;
