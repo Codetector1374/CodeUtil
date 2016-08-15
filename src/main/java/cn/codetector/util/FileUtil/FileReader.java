@@ -26,4 +26,19 @@ public class FileReader {
 
         return string;
     }
+
+    public static String readFile(File file){
+        StringBuilder string = new StringBuilder();
+
+        try (BufferedReader br = new BufferedReader(new java.io.FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                string.append(line).append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return string.toString();
+    }
 }

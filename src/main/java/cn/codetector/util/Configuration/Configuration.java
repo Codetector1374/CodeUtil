@@ -1,5 +1,9 @@
 package cn.codetector.util.Configuration;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -146,7 +150,9 @@ public class Configuration {
         try {
             FileWriter fw = new FileWriter(config, false);
             JSONObject object = new JSONObject(configs);
-            object.writeJSONString(fw);
+            Gson g = new GsonBuilder().setPrettyPrinting().create();
+            JsonElement je = new JsonParser().parse(object.toJSONString());
+            fw.write(g.toJson(je));
             fw.flush();
             fw.close();
         } catch (IOException e) {
