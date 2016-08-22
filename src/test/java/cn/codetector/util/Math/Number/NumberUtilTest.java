@@ -9,21 +9,6 @@ import java.util.List;
 public class NumberUtilTest extends TestCase {
 
     @Test
-    public void testGeneratePrimeList(){
-        int set = 0;
-        List<Integer> numbers =  new ArrayList<>();
-        numbers.add(2);
-        for (int i = 3; set < 20; i+=2){
-            if (NumberUtil.isPrime(i)){
-                numbers.add(i);
-                if(NumberUtil.isPrime(i-2)){
-                    set++;
-                    System.out.println("pair: "+i+" and "+(i-2));
-                }
-            }
-        }
-    }
-
     public void testIsPrime() throws Exception {
         assertTrue(NumberUtil.isPrime(2));
         assertTrue(NumberUtil.isPrime(3));
@@ -35,11 +20,16 @@ public class NumberUtilTest extends TestCase {
         assertFalse(NumberUtil.isPrime(6));
         assertFalse(NumberUtil.isPrime(8));
     }
-
+    @Test
     public void testIsOdd() throws Exception {
         assertTrue(NumberUtil.isOdd(1));
         assertTrue(NumberUtil.isOdd(3));
         assertTrue(NumberUtil.isOdd(5));
         assertTrue(NumberUtil.isOdd(7));
+        assertFalse(NumberUtil.isOdd(4));
+        assertFalse(NumberUtil.isOdd(2));
+        assertFalse(NumberUtil.isOdd(10));
+        assertFalse(NumberUtil.isOdd(877233662));
+        assertFalse(NumberUtil.isOdd(727467672));
     }
 }

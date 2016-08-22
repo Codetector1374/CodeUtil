@@ -48,4 +48,13 @@ public class QuadraticSolution {
             return "Solutions: \n"+ this.solution1.toString()+"\n"+this.solution2.toString();
         }
     }
+
+    public double[] toArray() {
+        try {
+            return new double[]{solution1.doubleValue(),solution2.doubleValue()};
+        } catch (Number.NumberEvaluationException e) {
+            e.printStackTrace();
+        }
+        return new double[0];
+    }
 }
