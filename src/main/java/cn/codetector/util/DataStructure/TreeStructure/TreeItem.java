@@ -1,6 +1,8 @@
 package cn.codetector.util.DataStructure.TreeStructure;
 
 import com.google.common.collect.Lists;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import java.util.Collections;
 import java.util.List;
@@ -11,26 +13,17 @@ import java.util.List;
 public class TreeItem<T> {
     private int id;
     private T content;
-    private TreeItem parent;
     private int parentID;
     private List<TreeItem> children;
-
-    public TreeItem(int id, T content, TreeItem parent){
-        this.id = id;
-        this.content = content;
-        this.parent = parent;
-    }
 
     public TreeItem(int id, T content){
         this.id = id;
         this.content = content;
-        this.parent = null;
     }
 
     public TreeItem(int id, T content, int parentID){
         this.id = id;
         this.content = content;
-        this.parent = null;
         this.parentID = parentID;
     }
 
@@ -38,16 +31,8 @@ public class TreeItem<T> {
         return content;
     }
 
-    public TreeItem getParent() {
-        return parent;
-    }
-
     public void setContent(T content) {
         this.content = content;
-    }
-
-    public void setParent(TreeItem parent) {
-        this.parent = parent;
     }
 
     public List<TreeItem> getChildren(){
@@ -75,16 +60,21 @@ public class TreeItem<T> {
         children.add(item);
     }
 
-    public boolean isRoot(){
-        return parent == null;
-    }
-
     public boolean isLeaf(){
         return children == null || children.size()==0;
     }
 
     public boolean isBranch(){
-        return parent != null && children != null && children.size() > 0;
+        return !isLeaf();
+    }
+
+    /**
+     * @deprecated NoLonger works. Now returns the value of isBranch
+     * @return
+     */
+    @Deprecated
+    public boolean isRoot(){
+        return isBranch();
     }
 
     public int getId() {
@@ -99,6 +89,24 @@ public class TreeItem<T> {
         if (children != null){
             children.clear();
         }
-        parent = null;
+    }
+
+    public JSONObject toJson(){
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("label",this.content);
+        jsonObject.put("id",this.id);
+        if (!isLeaf()){
+            JSONArray children = new JSONArray();
+            for (TreeItem i : getChildren()){
+                children.add(i.toJson());
+            }
+            jsonObject.put("children",children);
+        }
+        return jsonObject;
+    }
+
+    @Override
+    public String toString() {
+        return toJson().toJSONString();
     }
 }
