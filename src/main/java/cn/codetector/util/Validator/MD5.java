@@ -7,12 +7,12 @@ public class MD5 {
     private static final char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5',
             '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
-    public static String getmd5String(String original) {
+    public static String getMD5String(byte[] original){
         String rtnStr = "";
         MessageDigest messageDigest = null;
         try {
             messageDigest = MessageDigest.getInstance("MD5");
-            messageDigest.update(original.getBytes());
+            messageDigest.update(original);
             byte[] bytes = messageDigest.digest();
             int len = bytes.length;
             StringBuilder buf = new StringBuilder(len * 2);
@@ -26,5 +26,9 @@ public class MD5 {
         }
 
         return rtnStr;
+    }
+
+    public static String getMD5String(String original) {
+        return getMD5String(original.getBytes());
     }
 }
