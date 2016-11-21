@@ -1,6 +1,7 @@
 package cn.codetector.util.DataStructure.TreeStructure;
 
 import com.google.common.collect.Lists;
+import javafx.beans.property.ReadOnlyObjectProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,43 +13,41 @@ import java.util.Map;
  */
 public class TreeStructure<T> {
     TreeItem<T> rootItem;
+    T rootName = null;
 
-    public TreeStructure(){
-        rootItem = new TreeItem<T>(0,null);
+    public TreeStructure() {
+        rootItem = new TreeItem<T>(0, rootName);
     }
 
-    public void sortTreeStructures(List<TreeItem> itemList){
-        List<TreeItem> items = Lists.newCopyOnWriteArrayList(itemList);
+    public TreeStructure(T rootName) {
+        this.rootName = rootName;
+        this.rootItem = new TreeItem<T>(0, rootName);
+    }
+
+    public void sortTreeStructures(List<TreeItem<T>> itemList) {
+        List<TreeItem<T>> items = Lists.newCopyOnWriteArrayList(itemList);
+        List<TreeItem<T>> sortingRoot = Lists.newArrayList();
+        sortingRoot.add(rootItem);
 
         rootItem.setForSorting();
-        List<Integer> parents = new ArrayList<>();
-        for (TreeItem item : items) {
-            if (item.getParentID() == 0) {
-                item.setForSorting();
-                rootItem.attachChildren(item);
-                item.setParent(rootItem);
-                parents.add(item.getParentID());
-                items.remove(item);
-            }
-        }
-        while (!parents.isEmpty()){
-            List<Integer> newParents = new ArrayList<>();
-            for (TreeItem item : items){
-                if (parents.contains(item.getParentID())){
-                    TreeItem parentItem = rootItem.findChildByID(item.getParentID());
-                    if (parentItem != null){
+        while (!sortingRoot.isEmpty()) {
+            List<TreeItem<T>> newSearchRoots = Lists.newArrayList();
+            for (TreeItem item : items) {
+                for (TreeItem<T> searchRootItem : sortingRoot) {
+                    if (searchRootItem.getId() == item.getParentID()) {
                         item.setForSorting();
-                        parentItem.attachChildren(item);
-                        item.setParent(parentItem);
-                        newParents.add(item.getId());
+                        searchRootItem.attachChildren(item);
+                        newSearchRoots.add(item);
+                        items.remove(item);
                     }
                 }
             }
-            parents = newParents;
+            sortingRoot = newSearchRoots;
         }
+
     }
 
-    public TreeItem getRootItem(){
+    public TreeItem getRootItem() {
         return rootItem;
     }
 }
