@@ -14,9 +14,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by codet on 2016/2/10.
- */
+//Copyright codetector
+
 public class Configuration {
     private Map<String, Object> configs;
     private File file;
@@ -117,12 +116,25 @@ public class Configuration {
         this.save();
     }
 
-    public int getIntergerValue(String key, int defaultValue) {
+    public int getIntegerValue(String key, int defaultValue) {
         if (configs.get(key) == null) {
             setIntergerValue(key, defaultValue);
-            return getIntergerValue(key, defaultValue);
+            return getIntegerValue(key, defaultValue);
         }
         return Integer.parseInt((String) configs.get(key));
+    }
+
+    public long getLongValue(String key, long defaultValue) {
+        if (configs.get(key) == null) {
+            setLongValue(key, defaultValue);
+            return getLongValue(key, defaultValue);
+        }
+        return Long.parseLong((String) configs.get(key));
+    }
+
+    public void setLongValue(String key, long value) {
+        configs.put(key, String.valueOf(value));
+        this.save();
     }
 
     public void setListValue(String key, List<String> list) {
