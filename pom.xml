@@ -6,7 +6,11 @@
 
     <groupId>cn.codetector</groupId>
     <artifactId>util</artifactId>
-    <version>1.5-SNAPSHOT</version>
+    <version>1.5</version>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Utility for Java daily programming</description>
+    <url>https://github.com/Codetector1374/CodeUtil</url>
 
     <dependencies>
         <dependency>
@@ -50,4 +54,30 @@
             </plugin>
         </plugins>
     </build>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Codetector</name>
+            <email>codetector@codetector.cn</email>
+            <organization>Guardian Technologies</organization>
+            <organizationUrl>http://codetector.cn</organizationUrl>
+        </developer>
+    </developers>
+
+    <distributionManagement>
+        <repository>
+            <id>codetectorRepo</id>
+            <url>http://nexus.codetector.cn/repository/codetector/</url>
+        </repository>
+        <snapshotRepository>
+            <id>codetectorRepo</id>
+            <url>http://nexus.codetector.cn/repository/codetector-staging/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
